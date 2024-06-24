@@ -33,17 +33,14 @@ module.exports = {
       "error",
       2
     ],
-    "linebreak-style": [
-      "error",
-      "windows"
-    ],
+    "linebreak-style": false,
     "quotes": [
       "error",
       "double"
     ],
     "semi": [
       "error",
-      "never"
-    ]
+      "never",
+    ],
   }
-}
+};
