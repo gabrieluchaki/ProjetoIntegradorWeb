@@ -6,6 +6,7 @@ interface IUsuariosRepository {
   delete: (id: string) => Promise<void>
   update: (usuario: Usuario) => Promise<void>
   getById: (id: string) => Promise<Usuario | null>
+  findOne: (email: string) => Promise<Usuario | null> 
 }
 
 export { IUsuariosRepository }

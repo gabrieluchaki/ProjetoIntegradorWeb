@@ -17,6 +17,7 @@ class UsuarioRepository implements IUsuariosRepository {
 
   async create ( newUser: Usuario): Promise<Usuario> {
     const user = await this.repository.create(newUser)
+    await this.repository.save(user)
     return user
   }
 
@@ -30,6 +31,10 @@ class UsuarioRepository implements IUsuariosRepository {
   }  
   async getById (id: string): Promise<Usuario | null> {
     const usuario = await this.repository.findOneBy({id})
+    return usuario
+  }
+  async findOne (email: string) : Promise<Usuario | null> {
+    const usuario = await this.repository.findOneBy({email})
     return usuario
   }
   

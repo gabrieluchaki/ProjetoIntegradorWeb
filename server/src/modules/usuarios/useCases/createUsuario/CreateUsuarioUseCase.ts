@@ -30,12 +30,13 @@ class CreateUsuarioUseCase {
   async execute({nome, tipo, email, telefone}: IRequest):Promise<Usuario> {
     createUsuarioSchema.parse({nome, tipo, email, telefone})
 
-  // adicionar condição para conferir se já existe. utilizar findeOne
-
+    const usuarioExist = await this.usuarioRepository.findOne(email)
+    if (usuarioExist) throw new Error("Já existe usuário com esse email")
+    
     const newUser = new Usuario()
     Object.assign(newUser, {nome, tipo, email, telefone})
 
-    const usuario = this.usuarioRepository.create(newUser)
+    const usuario = await this.usuarioRepository.create(newUser)
     return usuario
   }
 }
