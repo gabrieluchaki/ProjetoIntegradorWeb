@@ -6,8 +6,8 @@ class ListUsuarioController {
   async handle (request: Request, response: Response): Promise<Response> {
     const usuarioRepository = new UsuarioRepository()
     const listUsuarioUseCase = new ListUsuarioUseCase(usuarioRepository)
-    
-    const usuarios =  await listUsuarioUseCase.execute()
+
+    const usuarios = await listUsuarioUseCase.execute()
 
     return response.status(200).json({usuarios})
   }

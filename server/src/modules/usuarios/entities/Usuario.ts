@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryColumn } from "typeorm"
+import { v4 as uuidv4 } from 'uuid'
 
 @Entity('usuarios')
 class Usuario {
@@ -17,6 +18,11 @@ class Usuario {
 
   @Column()
   telefone?: string
+
+  constructor () {
+    this.id = uuidv4()
+  }
+  
 }
 
 export { Usuario }
