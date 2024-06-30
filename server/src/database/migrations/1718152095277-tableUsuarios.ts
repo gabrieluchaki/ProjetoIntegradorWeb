@@ -20,11 +20,37 @@ export class TableUsuarios1718152095277 implements MigrationInterface {
               isNullable: false
             }),
             new TableColumn({
+              name: "cpf",
+              type: "char(11)",
+              isNullable: false
+            }),
+            new TableColumn({
+              name: "data_nascimento",
+              type: "date",
+              isNullable: false
+            }),
+            new TableColumn({
+              name: "genero",
+              type: "varchar",
+              isNullable: false
+            }),
+            new TableColumn({
+              name: "status",
+              type: "varchar",
+              isNullable: false
+            }),
+            new TableColumn({
               name: "tipo",
-              type: "varchar"
+              type: "varchar",
+              isNullable: false
             }),
             new TableColumn({
               name: "email",
+              type: "varchar",
+              isNullable: false
+            }),
+            new TableColumn({
+              name: "senha",
               type: "varchar",
               isNullable: false
             }),
