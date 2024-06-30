@@ -40,7 +40,7 @@ const createUsuarioSchema = z.object({
   telefone: z.string(),
   status: usuarioStatusSchema,
   cpf: z.string().min(11).max(11),
-  dataNascimento: z.date(),
+  dataNascimento: z.coerce.date(),
   genero: usuarioGeneroSchema,
   senha: z.string().min(6)
 })
@@ -56,7 +56,7 @@ class CreateUsuarioUseCase {
     if (usuarioExist) throw new Error("Já existe usuário com esse email")
     
     const newUser = new Usuario()
-    Object.assign(newUser, {nome, tipo, email, telefone})
+    Object.assign(newUser, {nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha})
 
     const usuario = await this.usuarioRepository.create(newUser)
     return usuario
