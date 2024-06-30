@@ -26,18 +26,20 @@ class UsuarioRepository implements IUsuariosRepository {
   }
 
   //confirmar se esta correto
-  async update (upUsuario: Usuario): Promise<void> {
-    await this.repository.update({ id: upUsuario.id}, upUsuario)
+  async update (upUsuario: Usuario): Promise<Usuario> {
+    const usuario = await this.repository.save(upUsuario)
+    return usuario
   }  
+
   async getById (id: string): Promise<Usuario | null> {
     const usuario = await this.repository.findOneBy({id})
     return usuario
   }
+
   async findOne (email: string) : Promise<Usuario | null> {
     const usuario = await this.repository.findOneBy({email})
     return usuario
   }
-  
 }
 
 export { UsuarioRepository }

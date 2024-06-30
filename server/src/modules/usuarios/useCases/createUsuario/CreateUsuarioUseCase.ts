@@ -19,7 +19,7 @@ const usuarioTipoSchema = z.union([
 const createUsuarioSchema = z.object({
   nome: z.string(),
   tipo: usuarioTipoSchema,
-  email: z.string(), // confirmar como usar rejex
+  email: z.string().email(), 
   telefone: z.string()
 })
 
