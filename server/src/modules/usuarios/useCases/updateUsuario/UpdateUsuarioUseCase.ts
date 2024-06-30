@@ -56,7 +56,7 @@ class UpdateUsuarioUseCase {
     const usuarioExist = await this.usuarioRepository.getById(id)
     if (!usuarioExist) throw new Error("Usuario nao existe")
 
-    const usuarioAtt = Object.assign(usuarioExist, {nome, tipo, email, telefone})
+    const usuarioAtt = Object.assign(usuarioExist, {nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha})
 
     const usuario = await this.usuarioRepository.update(usuarioAtt)
     
