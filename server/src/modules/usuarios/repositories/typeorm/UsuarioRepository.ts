@@ -15,6 +15,11 @@ class UsuarioRepository implements IUsuariosRepository {
     return usuarios
   }
 
+ async listPendentes(): Promise<Usuario[]> {
+    const usuarios = await this.repository.findBy({status: 'PENDENTE'}) 
+    return usuarios
+  }
+
   async create ( newUser: Usuario): Promise<Usuario> {
     const user = await this.repository.create(newUser)
     await this.repository.save(user)

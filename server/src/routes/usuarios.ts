@@ -6,6 +6,7 @@ import { DeleteUsuarioController } from "../../src/modules/usuarios/useCases/del
 import { UpdateUsuarioController } from "../modules/usuarios/useCases/updateUsuario/UpdateUsuarioController";
 import { ByIdUsuarioController } from "../modules/usuarios/useCases/byIdUsuario/ByIdUsuarioController";
 import { LoginUsuarioController } from "../modules/usuarios/useCases/loginUsuario/LoginUsuarioController";
+import { ListPendentesController } from "../modules/usuarios/useCases/listUsuariosPendentes/ListPendentesController";
 
 const loginUsuarioController = new LoginUsuarioController();
 const listUsuarioController = new ListUsuarioController()
@@ -13,10 +14,12 @@ const createUsuariosController = new CreateUsuarioController()
 const deleteUsuarioController = new DeleteUsuarioController()
 const updateUsuarioController = new UpdateUsuarioController() 
 const byIdUsuarioController = new ByIdUsuarioController()
+const listPendentes = new ListPendentesController()
 
 const usuariosRouter = Router()
 
 usuariosRouter.get('/usuarios', listUsuarioController.handle)
+usuariosRouter.get('/usuariosPendentes', listPendentes.handle)
 usuariosRouter.post('/usuarios', createUsuariosController.handle)
 usuariosRouter.delete('/usuarios/:id', deleteUsuarioController.handle)
 usuariosRouter.put('/usuarios/:id', updateUsuarioController.handle)
