@@ -1,7 +1,7 @@
 import { Usuario } from "../../entities/Usuario";
 import { IUsuariosRepository } from "../../repositories/IUsuariosRepository";
 import { z } from 'zod'
-
+import { hash } from 'bcrypt';
 interface IRequest {
   nome: string
   tipo: string 
@@ -46,20 +46,21 @@ const createUsuarioSchema = z.object({
 })
 
 class CreateUsuarioUseCase {
+  constructor(private readonly usuarioRepository: IUsuariosRepository) {}
 
-  constructor (private readonly usuarioRepository: IUsuariosRepository) { }
+  async execute({ nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha }: IRequest): Promise<Usuario> {
+    createUsuarioSchema.parse({ nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha });
 
-  async execute({nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha}: IRequest):Promise<Usuario> {
-    createUsuarioSchema.parse({nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha})
+    const usuarioExist = await this.usuarioRepository.findOne(email);
+    if (usuarioExist) throw new Error("Já existe usuário com esse email");
 
-    const usuarioExist = await this.usuarioRepository.findOne(email)
-    if (usuarioExist) throw new Error("Já existe usuário com esse email")
-    
-    const newUser = new Usuario()
-    Object.assign(newUser, {nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha})
+    const passwordHash = await hash(senha, 8);
 
-    const usuario = await this.usuarioRepository.create(newUser)
-    return usuario
+    const newUser = new Usuario();
+    Object.assign(newUser, { nome, tipo, email, telefone, status, cpf, dataNascimento, genero, senha: passwordHash });
+
+    const usuario = await this.usuarioRepository.create(newUser);
+    return usuario;
   }
 }
 
