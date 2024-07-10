@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm"
+import { Artigos } from "../../artigos/enntities/Artigos"
+import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm"
 import { v4 as uuidv4 } from 'uuid'
 
 @Entity('usuarios')
@@ -35,6 +36,12 @@ class Usuario {
   telefone?: string
 
   //colocar foto
+  @OneToMany(()=> Artigos, (artigo) => artigo.usuario, {
+    eager: true,
+    onDelete: 'SET NULL'
+  })
+
+  artigos?: Artigos[]
 
   constructor () {
     this.id = uuidv4()
