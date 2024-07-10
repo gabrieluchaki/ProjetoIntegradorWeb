@@ -3,6 +3,7 @@ import AuthContext from '../AuthContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import './Profile.css';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
@@ -56,75 +57,77 @@ function Profile() {
   };
 
   return (
-    <div>
-      <h2>Editar Perfil</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="nome">Nome:</label>
-        <input
-          type="text"
-          id="nome"
-          name="nome"
-          value={formData.nome}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="cpf">CPF:</label>
-        <input
-          type="text"
-          id="cpf"
-          name="cpf"
-          value={formData.cpf}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="dataNascimento">Data de Nascimento:</label>
-        <input
-          type="date"
-          id="dataNascimento"
-          name="dataNascimento"
-          value={formData.dataNascimento}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="genero">Gênero:</label>
-        <select
-          id="genero"
-          name="genero"
-          value={formData.genero}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Selecione</option>
-          <option value="MASCULINO">Masculino</option>
-          <option value="FEMININO">Feminino</option>
-          <option value="OUTRO">Outro</option>
-        </select>
-        
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="telefone">Telefone:</label>
-        <input
-          type="text"
-          id="telefone"
-          name="telefone"
-          value={formData.telefone}
-          onChange={handleChange}
-          required
-        />
-        
-        <button type="submit">Salvar</button>
-      </form>
+    <div className="profile-page">
+      <div className="profile-container">
+        <h2>Editar Perfil</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            value={formData.nome}
+            onChange={handleChange}
+            required
+          />
+          
+          <label htmlFor="cpf">CPF:</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            value={formData.cpf}
+            onChange={handleChange}
+            required
+          />
+          
+          <label htmlFor="dataNascimento">Data de Nascimento:</label>
+          <input
+            type="date"
+            id="dataNascimento"
+            name="dataNascimento"
+            value={formData.dataNascimento}
+            onChange={handleChange}
+            required
+          />
+          
+          <label htmlFor="genero">Gênero:</label>
+          <select
+            id="genero"
+            name="genero"
+            value={formData.genero}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Selecione</option>
+            <option value="MASCULINO">Masculino</option>
+            <option value="FEMININO">Feminino</option>
+            <option value="OUTRO">Outro</option>
+          </select>
+          
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          
+          <label htmlFor="telefone">Telefone:</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            value={formData.telefone}
+            onChange={handleChange}
+            required
+          />
+          
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
     </div>
   );
 }

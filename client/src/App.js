@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
+import Approvals from './pages/Approvals';
 import { AuthProvider } from './AuthContext';
 
 function App() {
@@ -23,18 +24,21 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Header onLoginClick={openLoginModal} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            {/* Defina outras rotas aqui */}
-          </Routes>
-        </main>
-        <Footer />
-        <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} onRegisterClick={openRegisterModal} />
-        <RegisterModal isOpen={isRegisterModalOpen} onClose={closeRegisterModal} />
-        <ToastContainer /> {/* Adicione isso */}
+        <div id="root">
+          <Header onLoginClick={openLoginModal} />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/approvals" element={<Approvals />} />
+              {/* Defina outras rotas aqui */}
+            </Routes>
+          </main>
+          <Footer />
+          <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} onRegisterClick={openRegisterModal} />
+          <RegisterModal isOpen={isRegisterModalOpen} onClose={closeRegisterModal} />
+          <ToastContainer /> {/* Adicione isso */}
+        </div>
       </Router>
     </AuthProvider>
   );

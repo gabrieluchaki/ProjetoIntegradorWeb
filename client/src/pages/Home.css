@@ -1,0 +1,41 @@
+.home-container {
+    background: url('../../public/images/background-texture.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+}
+
+.intro-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem; /* Adiciona espaçamento abaixo */
+}
+
+.intro-section .logo-center {
+    width: 250px; /* Tamanho do logo no centro da página */
+    height: auto;
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+.intro-section h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.intro-section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.content-section {
+    display: flex;
+    justify-content: flex-start; /* Alinha os conteúdos à esquerda */
+    align-items: flex-start;
+    gap: 2rem; /* Espaçamento entre os quadrados */
+    max-width: 1200px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}

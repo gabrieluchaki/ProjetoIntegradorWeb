@@ -15,9 +15,19 @@ header {
     box-shadow: var(--box-shadow);
     width: 100%;
     padding: 1rem;
-    text-align: center;
-    color: #8B4513; /* Cor do texto */
-    font-weight: bold; /* Peso da fonte */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px; /* Aumenta o tamanho do logo no header */
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 10px; /* Adiciona bordas arredondadas com raio de 10px */
+}
+
+nav {
+    flex-grow: 1; /* Permite que o nav cresça para ocupar o espaço restante */
 }
 
 nav ul {
@@ -25,7 +35,8 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2rem; /* Ajusta o espaçamento entre os itens do menu */
     align-items: center;
     height: 60px;
 }
@@ -43,7 +54,7 @@ nav ul li button {
     padding: 15px 20px;
     display: block;
     transition: var(--transition);
-    font-weight: bold; /* Peso da fonte */
+    font-weight: bold;
     background: none;
     border: none;
     cursor: pointer;
@@ -68,7 +79,7 @@ nav ul li button:hover {
     cursor: pointer;
     padding: 15px 20px;
     transition: var(--transition);
-    font-weight: bold; /* Peso da fonte */
+    font-weight: bold;
 }
 
 .dropdown-content {
@@ -80,8 +91,6 @@ nav ul li button:hover {
     z-index: 1;
     border-radius: var(--border-radius);
 }
-
-
 
 .dropdown-content a:hover,
 .dropdown-content button:hover {
@@ -126,7 +135,7 @@ nav ul li button:hover {
     display: block;
     text-align: left;
     border-radius: var(--border-radius);
-    font-weight: bold; /* Peso da fonte */
+    font-weight: bold;
     background: none;
     border: none;
     cursor: pointer;

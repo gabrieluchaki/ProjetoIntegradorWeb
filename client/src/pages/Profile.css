@@ -1,36 +1,51 @@
+.profile-page {
+  background: url('../../public/images/background-texture.png') no-repeat center center fixed;
+  background-size: cover;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .profile-container {
-    max-width: 600px;
-    margin: 2rem auto;
+    width: 100%;
+    max-width: 800px; /* Aumentar a largura máxima */
+    margin: 2rem;
     padding: 2rem;
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-  }
-  
-  .profile-container h2 {
+    text-align: center; /* Alinha os textos centralizados */
+}
+
+.profile-container h2 {
     text-align: center;
     margin-bottom: 1rem;
-  }
-  
-  .profile-container form {
+}
+
+.profile-container form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .profile-container form label {
+    align-items: center; /* Centraliza os elementos do formulário */
+}
+
+.profile-container form label {
     margin-bottom: 0.5rem;
     font-weight: bold;
-  }
-  
-  .profile-container form input,
-  .profile-container form select {
+    align-self: flex-start; /* Alinha as labels à esquerda */
+}
+
+.profile-container form input,
+.profile-container form select {
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: var(--border-radius);
-  }
-  
-  .profile-container form button {
+    width: 100%; /* Garante que os inputs ocupem toda a largura */
+}
+
+.profile-container form button {
     padding: 0.75rem;
     border: none;
     border-radius: var(--border-radius);
@@ -39,9 +54,8 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .profile-container form button:hover {
+}
+
+.profile-container form button:hover {
     background-color: #3e8e41;
-  }
-  
+}
