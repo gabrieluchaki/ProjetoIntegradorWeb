@@ -1,0 +1,22 @@
+.intro-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+
+.intro-section .logo {
+    width: 150px;
+    height: auto;
+}
+
+.intro-section h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.intro-section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+}

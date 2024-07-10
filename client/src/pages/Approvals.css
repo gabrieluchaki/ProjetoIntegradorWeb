@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #ffffff;
+    --background-color: #f4f4f9;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+.approvals-page {
+    background: url('../../public/images/background-texture.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.approvals-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.approvals-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.approvals-section {
+    margin-bottom: 2rem;
+}
+
+.approvals-section h2 {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.approvals-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.approval-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.approval-item p {
+    margin: 0.5rem 0;
+}
+
+.approve-button, .reject-button {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.reject-button {
+    background-color: #f44336; /* Cor de rejeição */
+}
+
+.approve-button:hover, .reject-button:hover {
+    opacity: 0.8;
+}

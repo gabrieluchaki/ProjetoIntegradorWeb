@@ -1,0 +1,32 @@
+.carousel-wrapper {
+    background-color: var(--background-color); /* Fundo branco */
+    border-radius: var(--border-radius);
+    width: 1500px; /* Define a largura fixa */
+    height: 400px; /* Define a altura fixa */
+    overflow: hidden; /* Esconde o conteúdo que exceder o tamanho do quadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Ajuste de padding para o espaço interno */
+}
+
+.carousel-container {
+    width: 100%; /* O carousel ocupará 100% da largura disponível no contêiner */
+    height: 100%; /* O carousel ocupará 100% da altura disponível no contêiner */
+}
+
+.carousel .slide {
+    width: 48%; /* Define a largura de cada slide para ocupar metade do carousel menos o espaço entre elas */
+    margin-right: 4%; /* Adiciona espaço entre os slides */
+}
+
+.carousel .slide:last-child {
+    margin-right: 0; /* Remove o espaço depois do último slide */
+}
+
+.carousel .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}

@@ -1,0 +1,73 @@
+footer {
+    background: linear-gradient(90deg, rgba(76, 175, 80, 0.8) 0%, rgba(56, 142, 60, 0.8) 100%), url('./background-leaves.png');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+footer .footer-nav {
+    flex-grow: 1;
+}
+
+footer .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+footer .footer-nav ul li {
+    display: inline;
+}
+
+footer .footer-nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto; /* Centraliza os ícones no espaço disponível */
+    flex-grow: 0; /* Não expande, mas mantém no meio */
+}
+
+footer .social-icons a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+footer .contact-info {
+    text-align: right;
+    flex-grow: 1;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-nav,
+    footer .contact-info {
+        flex-grow: 0;
+        text-align: center;
+    }
+}

@@ -20,6 +20,7 @@ function Header({ onLoginClick }) {
 
   return (
     <header>
+      <Link to="/"><img src="images/logo.png" alt="EcoComunidade Logo" className="logo" /></Link>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -28,7 +29,7 @@ function Header({ onLoginClick }) {
             onMouseEnter={toggleMapDropdown}
             onMouseLeave={toggleMapDropdown}
           >
-            <button className="dropbtn">Mapa</button>
+            <Link to="/maps" className="dropbtn">Mapa</Link>
             {isMapDropdownOpen && (
               <div className="dropdown-content">
                 <Link to="/complete-posts">Postagens Completas</Link>
@@ -38,21 +39,20 @@ function Header({ onLoginClick }) {
           </li>
           <li><Link to="/observation-articles">Artigos de Observação</Link></li>
           <li><Link to="/environmental-education">Educação Ambiental</Link></li>
-          <li><Link to="/curation">Curadoria</Link></li>
-          <li><Link to="/scientific-data">Dados Científicos</Link></li>
           {user ? (
             <li className="user-dropdown" onMouseEnter={toggleUserDropdown} onMouseLeave={toggleUserDropdown}>
               <span className="welcome-text">Bem-vindo, {user.name}</span>
               {isUserDropdownOpen && (
                 <div className="dropdown-content">
                   <Link to="/profile">Perfil</Link>
+                  <Link to="/approvals">Aprovações</Link>
                   <Link to="/notifications">Notificações</Link>
                   <button className="dropdown-button" onClick={logout}>Logout</button>
                 </div>
               )}
             </li>
           ) : (
-            <li><button className="login-button" onClick={onLoginClick}>Login</button></li>
+            <li className="login-container"><button className="login-button" onClick={onLoginClick}>Login</button></li>
           )}
         </ul>
       </nav>
