@@ -13,8 +13,12 @@ function Home() {
         <hr />
       </div>
       <div className="content-section">
-        <Carousel />
-        <ArticleLinks />
+        <div className="carousel-wrapper">
+          <Carousel />
+        </div>
+        <div className="articles-box">
+          <ArticleLinks />
+        </div>
       </div>
     </div>
   );

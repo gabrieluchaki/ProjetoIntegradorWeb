@@ -6,14 +6,16 @@ function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">Sobre</Link></li>
-            <li><Link to="/contact">Contato</Link></li>
-            <li><Link to="/privacy">Privacidade</Link></li>
-          </ul>
-        </nav>
+        <div className="footer-nav">
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">Sobre</Link></li>
+              <li><Link to="/contact">Contato</Link></li>
+              <li><Link to="/privacy">Privacidade</Link></li>
+            </ul>
+          </nav>
+        </div>
         <div className="social-icons">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>

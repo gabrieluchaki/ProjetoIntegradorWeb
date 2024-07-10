@@ -1,0 +1,64 @@
+/* Maps.css */
+.maps-container {
+    display: flex;
+    background: url('../../public/images/background-texture.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+}
+
+.form-section {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-right: 2rem;
+    z-index: 1; /* Certifica que o formulário fique acima do mapa */
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+.form-section form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem; /* Adicionar espaçamento acima do botão */
+}
+
+.form-section form button:hover {
+    background-color: #3e8e41;
+}
+
+.map-section {
+    flex: 2;
+    height: 600px;
+    background-color: #ddd;
+    border-radius: var(--border-radius);
+    z-index: 0; /* Certifica que o mapa fique atrás do formulário */
+}

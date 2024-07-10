@@ -33,7 +33,7 @@
 
 .content-section {
     display: flex;
-    justify-content: flex-start; /* Alinha os conteúdos à esquerda */
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
     align-items: flex-start;
     gap: 2rem; /* Espaçamento entre os quadrados */
     max-width: 1200px; /* Define uma largura máxima */

@@ -2,33 +2,48 @@
     background-color: var(--background-color); /* Fundo branco */
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    padding: 5.5rem; /* Espaçamento interno */
-    flex: 1; /* Flexível para ocupar o máximo de espaço */
-    width: 100%; /* Garantir que ocupe todo o espaço possível */
+    width: 500px; /* Define a largura fixa */
+    height: 400px; /* Define a altura fixa */
+    overflow: hidden; /* Esconde o conteúdo que exceder o tamanho do quadrado */
+    padding: 1rem; /* Ajusta o espaçamento interno conforme necessário */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: center;
 }
 
 .articles-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center; /* Centraliza o texto do título */
 }
 
 .articles-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
 }
 
 .articles-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem; /* Aumenta o espaçamento entre os itens */
 }
 
 .articles-section ul li a {
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte do título */
     transition: color 0.3s ease;
 }
 
 .articles-section ul li a:hover {
     color: var(--secondary-color);
+}
+
+.article-meta {
+    font-size: 0.9rem; /* Define o tamanho da fonte para a meta informação */
+    color: var(--text-color);
+    margin-top: 0.3rem; /* Espaçamento acima da meta informação */
 }

@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -6,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Maps from './pages/Maps'; // Adicionando a nova página
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Approvals from './pages/Approvals';
@@ -30,6 +32,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/maps" element={<Maps />} /> {/* Definindo a rota para a nova página */}
               <Route path="/approvals" element={<Approvals />} />
               {/* Defina outras rotas aqui */}
             </Routes>

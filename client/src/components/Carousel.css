@@ -1,17 +1,18 @@
 .carousel-wrapper {
-    text-align: center;
-    padding: 2rem;
     background-color: var(--background-color); /* Fundo branco */
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    width: 100%; /* Ocupa toda a largura */
+    width: 1500px; /* Define a largura fixa */
+    height: 400px; /* Define a altura fixa */
+    overflow: hidden; /* Esconde o conteúdo que exceder o tamanho do quadrado */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem; /* Ajuste de padding para o espaço interno */
 }
 
 .carousel-container {
     width: 100%; /* O carousel ocupará 100% da largura disponível no contêiner */
+    height: 100%; /* O carousel ocupará 100% da altura disponível no contêiner */
 }
 
 .carousel .slide {

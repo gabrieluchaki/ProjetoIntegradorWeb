@@ -29,7 +29,7 @@ function Header({ onLoginClick }) {
             onMouseEnter={toggleMapDropdown}
             onMouseLeave={toggleMapDropdown}
           >
-            <button className="dropbtn">Mapa</button>
+            <Link to="/maps" className="dropbtn">Mapa</Link>
             {isMapDropdownOpen && (
               <div className="dropdown-content">
                 <Link to="/complete-posts">Postagens Completas</Link>

@@ -8,42 +8,66 @@ footer {
     box-shadow: var(--box-shadow);
 }
 
-footer nav ul {
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+footer .footer-nav {
+    flex-grow: 1;
+}
+
+footer .footer-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: flex-start;
     gap: 2rem;
-    margin-bottom: 1rem;
 }
 
-footer nav ul li {
+footer .footer-nav ul li {
     display: inline;
 }
 
-footer nav ul li a {
+footer .footer-nav ul li a {
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 1rem;
 }
 
-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 footer .social-icons {
-    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto; /* Centraliza os ícones no espaço disponível */
+    flex-grow: 0; /* Não expande, mas mantém no meio */
 }
 
 footer .social-icons a {
     color: var(--secondary-color);
-    margin: 0 0.5rem;
     font-size: 1.5rem;
+}
+
+footer .contact-info {
+    text-align: right;
+    flex-grow: 1;
 }
 
 footer p {
     margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-nav,
+    footer .contact-info {
+        flex-grow: 0;
+        text-align: center;
+    }
 }
